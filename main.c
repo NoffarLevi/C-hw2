@@ -24,10 +24,13 @@ switch (transaction_type)
   
 
 case 'O':
-    printf("Please enter the amount you wish to deposite ");
+    printf("Please enter the amount you wish to deposite \n");
      b=scanf("%lf",&amount);
+
     if(b==1)
     {
+      amount = (int)(100*amount);
+      amount=amount/100;
         firstDeposite(amount);
       break;
     }
@@ -37,7 +40,7 @@ case 'O':
   
 
     case 'B':
-   printf("Please enter your account number ");
+   printf("Please enter your account number \n");
      b=scanf("%d",&bankAccount);
         if(b==1)
         {
@@ -62,6 +65,8 @@ case 'O':
      a= scanf("%lf",&amount);
      if(a==1)
      {
+        amount = (int)(100*amount);
+        amount=amount/100;
       depposite( bankAccount, amount);
       break;
      }   
@@ -81,9 +86,14 @@ case 'O':
          printf("You entered invlaid bank account \n");
        }
         printf("Please enter the amount you wish to withdraw  \n");
-      scanf("%lf",&amount);
+      a=scanf("%lf",&amount);
+     if(a==1)
+     {
+        amount = (int)(100*amount);
+        amount=amount/100;
     withdrawal(bankAccount, amount);
      break;
+      }
       }
        printf("Invalid Input for W transaction \n");
        break;
@@ -110,6 +120,8 @@ case 'O':
   b= scanf("%lf",&interest_rate);
   if(b==1)
   {
+     interest_rate = (int)(100* interest_rate);
+         interest_rate= interest_rate/100;
     intrest( interest_rate);
     break;
   }
@@ -127,12 +139,16 @@ case 'O':
 default:
 printf("Please enter  a valid input \n" );
     break;
-}
-
 
 }
+
 }
+}
+
 printf("All accounts have been deleted \n");
 return 0;
-}
+ }
+
+
+
    
