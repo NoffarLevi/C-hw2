@@ -109,6 +109,9 @@ for(int i=0;i<ROWS;i++)
     if(bank[i][0]==1)
     {
         bank[i][1]=(bank[i][1])+(bank[i][1]*interest_rate);
+        bank[i][1] = (int)(100* bank[i][1]);
+       bank[i][1]= bank[i][1]/100;
+
     }   
 }
 }
